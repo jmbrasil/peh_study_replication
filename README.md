@@ -8,6 +8,10 @@ The dataset has the geomasked drug use scenes, not the real locations, which are
 
 Census records made by observation usually contain only age, sex and color/race (all according to the census taker's perception), plus longitude and latitude.
 
+The censuses cover 2020, 2022 and 2024. The locations of open drug use scenes are available for 2024 only; in all three censuses, the columns `local_coleta` and `cena_de_uso` show which records were collected at a scene.
+
+The scenes were recorded by the census teams during the 2024 PEH census, not by an independent survey. The two datasets are therefore not independent: a scene could only be recorded where the census teams went, and proximity between PEH and scenes partly reflects how the data were collected.
+
 ## How to run
 
 1. Install the packages: `pip install -r requirements.txt`
