@@ -19,7 +19,7 @@ ZONE_OF_RP_AP2 = {"2.1": "South", "2.2": "North"}
 
 def neighborhoods():
     """The 166 neighborhoods, with the zone of each one (Planning Areas and Planning Regions, no exceptions)."""
-    b = gpd.read_file(DATA / "Limite_de_Bairros.shp").to_crs(CRS).reset_index(drop=True)
+    b = gpd.read_file(DATA / "limite_de_bairros.gpkg").to_crs(CRS).reset_index(drop=True)
     ap = b["area_plane"].astype(str).str.strip()
     rp = b["cod_rp"].astype(str).str.strip()
     zone = ap.map(ZONE_OF_AP)
