@@ -6,6 +6,8 @@ Code to repeat the analyses of the master's dissertation *Locations and Concentr
 
 The dataset has the geomasked drug use scenes, not the real locations, which are not public. This code therefore repeats the tests with the displaced scenes (Appendix A of the dissertation), not the results obtained with the real locations. The case study of Chapter 4 is not covered.
 
+Census records made by observation usually contain only age, sex and color/race (all according to the census taker's perception), plus longitude and latitude.
+
 ## How to run
 
 1. Install the packages: `pip install -r requirements.txt`
