@@ -2,7 +2,9 @@
 
 Code to repeat the analyses of the master's dissertation *Locations and Concentrations of People Experiencing Homelessness in Rio de Janeiro* (Joao Brasil, FGV EBAPE, 2026) with the public data.
 
-**Data:** https://doi.org/10.5281/zenodo.23992934
+**Data:** https://doi.org/10.5281/zenodo.23992933
+
+The data files are under embargo; the record shows the date they open. Until then, logged-in Zenodo users can request access on the record page. The code cannot run without these files.
 
 The dataset has the geomasked drug use scenes, not the real locations, which are not public. This code therefore repeats the tests with the displaced scenes (Appendix A of the dissertation), not the results obtained with the real locations. The case study of Chapter 4 is not covered.
 
