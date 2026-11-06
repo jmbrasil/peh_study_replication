@@ -20,7 +20,7 @@ URL = ("https://geoftp.ibge.gov.br/recortes_para_fins_estatisticos/grade_estatis
 
 
 def clip(zip_path):
-    city = gpd.read_file(DATA / "limite_de_bairros.gpkg").to_crs("EPSG:4674").union_all()
+    city = gpd.read_file(DATA / "neighborhood_boundaries.gpkg").to_crs("EPSG:4674").union_all()
     grid = pyogrio.read_dataframe(f"/vsizip/{zip_path}/BR1KM.shp", bbox=city.bounds)
     grid = grid[grid.intersects(city)].reset_index(drop=True)
     grid_m = grid.to_crs("EPSG:31983")

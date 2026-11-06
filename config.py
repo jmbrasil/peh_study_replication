@@ -19,7 +19,7 @@ ZONE_OF_RP_AP2 = {"2.1": "South", "2.2": "North"}
 
 def neighborhoods():
     """The 166 neighborhoods, with the zone of each one (Planning Areas and Planning Regions, no exceptions)."""
-    b = gpd.read_file(DATA / "limite_de_bairros.gpkg").to_crs(CRS).reset_index(drop=True)
+    b = gpd.read_file(DATA / "neighborhood_boundaries.gpkg").to_crs(CRS).reset_index(drop=True)
     ap = b["area_plane"].astype(str).str.strip()
     rp = b["cod_rp"].astype(str).str.strip()
     zone = ap.map(ZONE_OF_AP)
@@ -31,14 +31,14 @@ def neighborhoods():
 
 def peh(year):
     """PEH records of one census as points."""
-    d = pd.read_csv(DATA / "base_harmonizada_psr_2020_2024.csv", usecols=["ano_censo", "latitude", "longitude"])
+    d = pd.read_csv(DATA / "peh_harmonized_2020_2024.csv", usecols=["ano_censo", "latitude", "longitude"])
     d = d[d["ano_censo"] == year].dropna(subset=["latitude", "longitude"]).reset_index(drop=True)
     return gpd.GeoDataFrame(geometry=gpd.points_from_xy(d["longitude"], d["latitude"]), crs="EPSG:4326").to_crs(CRS)
 
 
 def scenes():
     """The 195 geomasked open drug use scenes. The real locations are not public."""
-    return gpd.read_file(DATA / "cenas_geomasked_2024.gpkg")[["geometry"]].to_crs(CRS)
+    return gpd.read_file(DATA / "geomasked_drug_use_scenes_2024.gpkg")[["geometry"]].to_crs(CRS)
 
 
 def grid_1km():

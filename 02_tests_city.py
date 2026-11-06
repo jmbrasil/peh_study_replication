@@ -17,7 +17,7 @@ neighborhood_polygons = neighborhoods()
 peh_points, scene_points = peh(2024), scenes()
 assert len(peh_points) == 8195 and len(scene_points) == 195
 grid = grid_1km()
-non_habitable = gpd.read_file(DATA / "areas_nao_habitaveis_2018.gpkg", layer="areas_nao_habitaveis").to_crs(CRS).union_all()
+non_habitable = gpd.read_file(DATA / "non_habitable_areas_2018.gpkg").to_crs(CRS).union_all()
 
 # Moran's I: count of scenes in the cells that touch the habitable area, without cells that have no Rook neighbor
 g = grid.loc[grid.intersects(neighborhood_polygons.union_all().difference(non_habitable)), ["geometry"]].reset_index(drop=True)

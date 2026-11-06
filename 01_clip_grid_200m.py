@@ -17,7 +17,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("shapefile", type=Path, help="IBGE grid quadrant ID_26 (grade_id26.shp)")
     args = parser.parse_args()
-    city = gpd.read_file(DATA / "limite_de_bairros.gpkg").to_crs("EPSG:4674").union_all()
+    city = gpd.read_file(DATA / "neighborhood_boundaries.gpkg").to_crs("EPSG:4674").union_all()
     grid = gpd.read_file(args.shapefile, bbox=city.bounds)
     grid = grid.iloc[sorted(grid.sindex.query(city, predicate="intersects"))].reset_index(drop=True)
     grid["dimensao"] = grid["ID_UNICO"].str.startswith("200M").map({True: "200m", False: "1km"})

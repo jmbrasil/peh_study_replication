@@ -4,7 +4,7 @@ import pandas as pd
 from config import DATA, RESULTS, count, duncan, grid_1km, neighborhoods, peh
 
 neighborhood_polygons = neighborhoods()
-pop = pd.read_csv(DATA / "populacao_bairros_2022.csv").set_index("codbnum")["pop_2022"]
+pop = pd.read_csv(DATA / "neighborhood_population_2022.csv").set_index("codbnum")["pop_2022"]
 neighborhood_polygons["pop"] = neighborhood_polygons["codbnum"].astype(int).map(pop).fillna(0)
 grid = grid_1km()
 grid["pop"] = grid["TOTAL"] * grid["frac_no_municipio"]
