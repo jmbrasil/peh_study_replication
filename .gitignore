@@ -1,0 +1,5 @@
+data/
+grid/
+results/
+__pycache__/
+.DS_Store

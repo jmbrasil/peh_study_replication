@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it and the dataset."
+title: "Replication code: People Experiencing Homelessness in Rio de Janeiro"
+authors:
+  - family-names: Brasil
+    given-names: Joao
+license: MIT
